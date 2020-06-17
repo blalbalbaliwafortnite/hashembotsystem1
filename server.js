@@ -310,7 +310,7 @@ client.on('message', message => {
   if(chatal3am.some(word => message.content.toLowerCase().includes(word))){
     message.delete()
     message.channel.sendMessage("دور هنا مو لازم شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>" + message.author)
+    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>")
   }
     } else {
     }
