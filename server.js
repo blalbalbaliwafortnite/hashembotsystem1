@@ -135,8 +135,6 @@ client.on("message", message => {
 });
 
 client.on('message', message => {
-      var logChannel = client.channels.get('720379297742716988');
-
   if(message.author.bot) return;
   if(usersMap.has(message.author.id)) {
     const userData = usersMap.get(message.author.id);
@@ -158,23 +156,13 @@ client.on('message', message => {
     else {
       ++msgCount;
       if(parseInt(msgCount) === LIMIT) {
-        const role = message.guild.roles.find(role => role.name === "Moderators");
-        message.member.addRole(role);
-        message.reply('** لقد تم اعطائك ميوت لمدة ساعتين السبب : سبام :warning:**');
-          // .addField("", ``, true)
+        const role = message.guild.roles.cache.get('');
+        message.member.roles.add(role);
+        message.channel.send('You have been muted.');
         setTimeout(() => {
-          message.member.removeRole(role);
-          message.reply('** لقد تم فك ميوت عليك يرجى عدم سبام مره اخر :white_check_mark: **');
-              const embed2 = new Discord.RichEmbed()
-           .setDescription(`**لقد تم فك العضو الميوت السبب سبام ${message.author}**`)
-           .setColor("GREEN")
-            logChannel.send(embed2);
+          message.member.roles.remove(role);
+          message.channel.send('You have been unmuted');
         }, TIME);
-  if (!logChannel) return;
-              const embed = new Discord.RichEmbed()
-           .setDescription(`**لقد تم اعطائه ميوت السبب السبام! اسم العضو ${message.author}**`)
-           .setColor("RED")
-            logChannel.send(embed);
       } else {
         userData.msgCount = msgCount;
         usersMap.set(message.author.id, userData);
@@ -2299,7 +2287,7 @@ client.on("message", message => {
     if (message.content.startsWith(prefix + "settings limitskick")) {
       if (!num) return message.channel.send("**:1234: | أرسل رقم ! **");
       if (isNaN(num)) return message.channel.send("**:1234: | أرقام فقط ! **");
-      config[message.guild.id].kickLimits = num;
+      config[message.guild.id].kickLimits = msgnum;
       message.channel.send(
         `**:lock: | تم التغيير اِلي : ${config[message.guild.id].kickLimits}**`
       );
