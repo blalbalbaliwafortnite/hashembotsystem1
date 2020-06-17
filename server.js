@@ -3141,7 +3141,7 @@ client.on("message", async message => {
         channel: room,
         onoff: "On",
         by: "On",
-        msg: ""
+        msg: ``
       };
       fs.writeFile("./welcomer.json", JSON.stringify(welcome), err => {
         if (err) console.error(err);
