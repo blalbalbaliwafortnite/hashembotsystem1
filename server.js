@@ -171,7 +171,7 @@ client.on('message', message => {
     else {
       ++msgCount;
       if(parseInt(msgCount) === LIMIT) {
-        const role = message.guilds.roles.get('718550471882571868');
+        const role = message.guild.roles.find(role => role.name === "Muted");
         message.member.addRole(role);
         message.reply('** لقد تم اعطائك ميوت لمدة ساعتين السبب : سبام :warning:**');
           // .addField("", ``, true)
@@ -346,7 +346,7 @@ var chatal3am = ["تلعب معي","تلعب 1v1","1v1","boxfight","arena","trio
 
 
 client.on('message', message => {
-    const role = message.guild.roles.get('718550471882571868');
+    const role = message.guild.roles.find(role => role.name === "Muted");
   if(chatmembers.some(word => message.content.toLowerCase().includes(word))){
     message.delete()
     message.channel.sendMessage("**لقد تم كتمه ميوت بسبب كلام سيئ ** :warning: " + message.author)
