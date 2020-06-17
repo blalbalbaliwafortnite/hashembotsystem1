@@ -3036,7 +3036,7 @@ client.on("guildMemberAdd", async member => {
     var imageHeight = 266; //ارتفاع الصورة
 
     //Avatar
-    var imageX = 290; //X coordinate
+    var imageX = 320; //X coordinate
     var imageY = 145; //Y coordinate
     var imageRadius = 20; //نصف قطر الصورة الدائرية
 
