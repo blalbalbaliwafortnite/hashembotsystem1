@@ -135,6 +135,8 @@ client.on("message", message => {
 });
 
 client.on('message', message => {
+      var logChannel = client.channels.get('720379297742716988');
+
   if(message.author.bot) return;
   if(usersMap.has(message.author.id)) {
     const userData = usersMap.get(message.author.id);
@@ -156,13 +158,23 @@ client.on('message', message => {
     else {
       ++msgCount;
       if(parseInt(msgCount) === LIMIT) {
-        const role = message.guild.roles.cache.get('');
-        message.member.roles.add(role);
-        message.channel.send('You have been muted.');
+        const role = message.guild.roles.get('718550471882571868');
+        message.member.addRole(role);
+        message.reply('** لقد تم اعطائك ميوت لمدة ساعتين السبب : سبام :warning:**');
+          // .addField("", ``, true)
         setTimeout(() => {
-          message.member.roles.remove(role);
-          message.channel.send('You have been unmuted');
+          message.member.removeRole(role);
+          message.reply('** لقد تم فك ميوت عليك يرجى عدم سبام مره اخر :white_check_mark: **');
+              const embed2 = new Discord.RichEmbed()
+           .setDescription(`**لقد تم فك العضو الميوت السبب سبام ${message.author}**`)
+           .setColor("GREEN")
+            logChannel.send(embed2);
         }, TIME);
+  if (!logChannel) return;
+              const embed = new Discord.RichEmbed()
+           .setDescription(`**لقد تم اعطائه ميوت السبب السبام! اسم العضو ${message.author}**`)
+           .setColor("RED")
+            logChannel.send(embed);
       } else {
         userData.msgCount = msgCount;
         usersMap.set(message.author.id, userData);
@@ -254,7 +266,7 @@ if (message.content.startsWith(prefix + "corona")) {
         let recovered = data.recovered;
         let critical = data.critial;
         let active = data.active;
-        
+
         const embed = new Discord.RichEmbed()
         .setColor(0x00AE86) 
         .setTimestamp(new Date())
@@ -262,7 +274,7 @@ if (message.content.startsWith(prefix + "corona")) {
         .addField(`Data for: ${country}`, `Confirmed: (Total: ${confirmed} | Daily: ${todayconfirmed}) \nDeaths: (Total: ${deaths} | Daily: ${todaydeaths}) \n Recoverd: ${recovered} \nCritical: ${critical} \nActive: ${data.active}`)
 
         message.channel.send(embed);
-    
+
     })
 }}
 });
@@ -305,7 +317,7 @@ client.on("message", message => {
            .addField("رطوبة", ` ${current.humidity}%`, true)
            .addField("يوم", `${current.day}`, true)
            .addField("تاريخ", `${current.date}`, true)
-           
+
            //Display when it's called
            message.channel.sendEmbed(embed)
 
@@ -321,7 +333,7 @@ var chatal3am = ["تلعب معي","تلعب 1v1","1v1","boxfight","arena","trio
 
 
 client.on('message', message => {
-    const role = message.guild.roles.find(role => role.name === "Muted");
+    const role = message.guild.roles.get('718550471882571868');
   if(chatmembers.some(word => message.content.toLowerCase().includes(word))){
     message.delete()
     message.channel.sendMessage("**لقد تم كتمه ميوت بسبب كلام سيئ ** :warning: " + message.author)
@@ -354,17 +366,17 @@ client.on("message", message => {
   if(enabled){
   if (message.content.startsWith(prefix + "state")) {
             let { version } = require("discord.js");
-     
+
             cpuStat.usagePercent(function(err, percent, seconds) {
               if (err) {
                 return console.log(err);
               }
-             
+
              let secs = Math.floor(client.uptime % 60);
              let days = Math.floor((client.uptime % 31536000) / 86400);
              let hours = Math.floor((client.uptime / 3600) % 24);
              let mins = Math.floor((client.uptime / 60) % 60);
-     
+
               //let duration = moment.duration(bot.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
               let embedStats = new Discord.RichEmbed()
              .setTitle("*** Stats ***")
@@ -381,7 +393,7 @@ client.on("message", message => {
              .addField("• Arch", `\`${os.arch()}\``,true)
              .addField("• Platform", `\`\`${os.platform()}\`\``,true)
              .setFooter("OdarBot stats")
-     
+
              message.channel.send(embedStats)
              })
 
@@ -512,7 +524,15 @@ client.on("message", message => {
   }
 });
 
+client.on("message", async message => {
+if (message.content === '!reboot') {
+  if (message.author.id !== '406127752484487168') return;
+  message.channel.send('Restarted.')
+    client.destroy();
+    client.login(token);
 
+}
+});
 
 
 /*client.on("message", message => {
@@ -525,7 +545,6 @@ client.on("message", message => {
     let platform = args[1];
 const ft = new Fortnite(apikey.fortnite)
     let data = ft.getInfo(username).then(data => {
-
         let stats = data.lifetimeStats;
         let kills = stats.find(s => s.stat == "kills");
         let wins = stats.find(s => s.stat == "wins");
@@ -536,7 +555,6 @@ const ft = new Fortnite(apikey.fortnite)
         let score = stats.find(s => s.stat == "score");
         let tPlayed = stats.find(s => s.stat == "timePlayed");
         let asTime = stats.find(s => s.stat == "avgSurvivalTime");
-
         let embed = new Discord.RichEmbed()
         .setTitle("Fortnite Stats")
         .setAuthor(data.username)
@@ -549,14 +567,11 @@ const ft = new Fortnite(apikey.fortnite)
         .addField("Time Played", tPlayed.value, true)
         .setFooter(`${data.username}'s score is: ${score.value}`)
         .setTimestamp();
-
         message.channel.send(embed);
-
     }).catch(e => {
         console.log(e)
         message.channel.send("Wrong nickname");
     });
-
 }
 });*/
 
@@ -640,7 +655,7 @@ client.on('messageReactionAdd', (messageReaction, user) => {
     console.log(user.username + "reacted.");
     var role = messageReaction.message.guild.roles.find(role => role.name.toLowerCase() ===
     roleName.toLowerCase());
-    
+
     if(role)
     {
         var member = messageReaction.message.guild.members.find(member => member.id === user.id);
@@ -656,7 +671,7 @@ client.on('messageReactionRemove', (messageReaction, user) => {
     var roleName = messageReaction.emoji.name;
     var role = messageReaction.message.guild.roles.find(role => role.name.toLowerCase() ===
     roleName.toLowerCase());
-    
+
     if(role)
     {
         var member = messageReaction.message.guild.members.find(member => member.id === user.id);
@@ -687,13 +702,13 @@ let countChannel = {
 // We're gonna doing the same thing if member/bot left the server.
 client.on("guildMemberAdd", member => {
   if (member.guild.id !== countChannel.serverID) return; // Avoid leaking.
-  
+
   client.channels.get(countChannel.total).setName(`عدد الاعضــاء: ${member.guild.memberCount}`);
 })
 
 client.on("guildMemberRemove", member => {
   if (member.guild.id !== countChannel.serverID) return;
-  
+
   client.channels.get(countChannel.total).setName(`عدد الاعضــاء: ${member.guild.memberCount}`);
 })
 
@@ -717,13 +732,13 @@ const embedColor = "#AA8ED6";
 const TitleServer = "# killerhashem";
 
 client.on("message", (message) => {
-  
+
 if (message.channel.id === "719347843353018408") {
 setInterval(() => {
   message.channel.bulkDelete(20);
 }, 10000);
 }
-  
+
 });
 
 
@@ -751,13 +766,13 @@ if (message.content.toLowerCase().startsWith(prefix + `ticket`)) {
             READ_MESSAGES: true
         });
         const newEMKAH = new Discord.RichEmbed()
-        
+
         .setColor(embedColor)
         .addField(`Ticket Bot`, `** لقد قمت بأنشاء تذكرة , يمكنك الذهب ووضع بلاغ او مشكلتك في -->** ` + `#${c.name}`)
         .setTimestamp();
-      
+
         message.channel.send({ embed: newEMKAH });
-      
+
         const embed3 = new Discord.RichEmbed()
         .setColor(embedColor)
         .addField(`${message.author.username}!`, `**سـوف يتم الرد عليك قريبا من قبل __ فريق المساعدة __ . يرجي توضيح سبب لانشائك التذكرة ومن فضلك قم بوضع اكبر قدر ممكن من التفاصيل **.`)
@@ -872,7 +887,7 @@ client.on('message', message => {
 **`)
    message.channel.send(e).then(m => m.delete(5000))
    message.author.sendEmbed(embed).catch(error => message.reply('Your DM’s is CLosed'))
-   
+
    }
    });
 
@@ -1044,9 +1059,9 @@ client.on("message", message => {
   }
   }
 });
-  
-  
-  
+
+
+
 //// كود فتح واغلاق الروم
 client.on("message", message => {
   if(enabled){
@@ -1338,7 +1353,6 @@ client.on("message", message => {
   if (message.content == `!اوامر`) {
     if (!message.guild.member(message.author).hasPermission('ADMINISTRATOR')) { return message.reply('ليس لديــك صلآحيـه!"'); }
           message.author.send(`
-
 \`الاوامر الإدارية\` :stars:
 \`${prefix}clear\` : لمسح الشات 
 \`!ban\` : لحظر شخص من السيرفر
@@ -1348,7 +1362,6 @@ client.on("message", message => {
 \`${prefix}close\` : لقفل التيكت
 \`${prefix}add\` : لـ اضافة شخص لتذكرة
 \`${prefix}remove\` : لـ حذف الشخص من التذكرة
-
 \`!mute\` : لإسكات شخص
 \`!unmute\` : لـ فك إسكات شخص
 \`${prefix}say\` : البوت يكرر كلامك
@@ -1365,8 +1378,6 @@ client.on("message", message => {
 \`${prefix}role\` : لاعطاء شخص رتبة
 \`${prefix}role all\` : لـ إعطاء الجميع رتبة معينة
 \`${prefix}role\` : warn لـ اعطاء انذار لشخص
-
-
  ** يوجد بعض أخطـا في اوامر التقديم يتم اصلاحه قريبا **
 \`\`اوامر التقديم\`\` :pencil: 
 \`${prefix}room1\` : لعمل روم التقديمات
@@ -1402,8 +1413,6 @@ client.on("message", message => {
 > \`${prefix}state\` : لعـرض حالة البوت
 > \`${prefix}rank\` : لعرض الرانك المستوى خاص بك بسيرفر
 > \`${prefix}leaderboard\` : لعرض المستويات الاعضاء
-
-
 \`أوامر العاب\` :game_die:
 > \`${prefix}rob\` : لسرقة فلوس شخص
 > \`${prefix}credits\` : لعرض فلوسك بحسابك
@@ -1412,11 +1421,7 @@ client.on("message", message => {
 > \`${prefix}pay\` : لكي تدفع لشخـص فلوس
 > \`${prefix}mothely\` : لأخذ مكافئه شهريا
  ** قريبـا اوامر جديد لل آلعاب **
-
-
-
 \`أوامر الموسيقى \` :notes:
-
 **االبوت الآول**
 > \`-1loop\` : لوضع الاغنيه تتكرر
 > \`-1leave\` : لـ اخراج البوت من القناة
@@ -1428,17 +1433,7 @@ client.on("message", message => {
 > \`-1skip\` : لتخطي الاغنيه
 > \`-1skipall\` : لتخطي كل اغاني
 > \`-1skipto\` : لتخطي الاغنيه علي حسب الرقم اغنيه موجود  ب ليست
-
-
-
-
-
-
-
-
-
 **االبوت الثـاني**
-
 > \`-2loop\` : لوضع الاغنيه تتكرر
 > \`-2leave\` : لـ اخراج البوت من القناة
 > \`-2pause\` : لتوقيف الاغنيه
@@ -1449,7 +1444,6 @@ client.on("message", message => {
 > \`-2skip\` : لتخطي الاغنيه
 > \`-2skipall\` : لتخطي كل اغاني
 > \`-2skipto\` : لتخطي الاغنيه علي حسب الرقم اغنيه موجود  ب ليست
-
 `)
 
   };
@@ -2199,7 +2193,7 @@ client.on("message", message => {
   }
   }
   });
-  
+
 client.on("message", message => {
   if(enabled){
   if (message.content === "السلام عليكم ورحمة الله وبركاته") {
@@ -2287,7 +2281,7 @@ client.on("message", message => {
     if (message.content.startsWith(prefix + "settings limitskick")) {
       if (!num) return message.channel.send("**:1234: | أرسل رقم ! **");
       if (isNaN(num)) return message.channel.send("**:1234: | أرقام فقط ! **");
-      config[message.guild.id].kickLimits = msgnum;
+      config[message.guild.id].kickLimits = num;
       message.channel.send(
         `**:lock: | تم التغيير اِلي : ${config[message.guild.id].kickLimits}**`
       );
@@ -3021,7 +3015,6 @@ client.on("guildMemberAdd", async member => {
   );
   if (!channel) return;
   if (channel) {
-    if (message.content.startsWith("testw")) {
     const imageUrlRegex = /\?size=2048$/g; ///تعديل غير اساسي
     const wlcImage = await fsn.readFile("./welcome111.png"); //اسم الصورة
     let result = await fetch(
@@ -3068,19 +3061,7 @@ client.on("guildMemberAdd", async member => {
     const attachment = new Attachment(buffer, filename);
     await channel.send(attachment);
   }
-}
 });
-
-client.on("message", async message => {
-if (message.content === '!reboot') {
-  if (message.author.id !== '406127752484487168') return;
-  message.channel.send('Restarted.')
-    client.destroy();
-    client.login(token);
-
-}
-});
-
 
 //تحديد روم الويلكم
 const wait = require("util").promisify(setTimeout);
@@ -3792,4 +3773,3 @@ client.on("message", async msg => {
     }
   }
 });
-
