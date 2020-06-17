@@ -1,3 +1,15 @@
+require("events").EventEmitter.defaultMaxListeners = 200;
+const http = require("http");
+const express = require("express");
+const app = express();
+app.get("/", (request, response) => {
+  response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://diagnostic-classy-boater.glitch.me/`);
+}, 9000);
+
 ////بكجات
 const { Client, RichEmbed } = require("discord.js");
 var { Util } = require("discord.js");
@@ -159,7 +171,7 @@ client.on('message', message => {
     else {
       ++msgCount;
       if(parseInt(msgCount) === LIMIT) {
-        const role = message.guild.roles.get('718550471882571868');
+        const role = message.guilds.roles.get('718550471882571868');
         message.member.addRole(role);
         message.reply('** لقد تم اعطائك ميوت لمدة ساعتين السبب : سبام :warning:**');
           // .addField("", ``, true)
@@ -525,15 +537,7 @@ client.on("message", message => {
   }
 });
 
-/*client.on("message", async message => {
-if (message.content === '!reboot') {
-  if (message.author.id !== '406127752484487168') return;
-  message.channel.send('Restarted.')
-    client.destroy();
-    client.login(token);
 
-}
-});*/
 
 
 /*client.on("message", message => {
@@ -3042,6 +3046,7 @@ client.on("guildMemberAdd", async member => {
   );
   if (!channel) return;
   if (channel) {
+    if (message.content.startsWith("testw")) {
     const imageUrlRegex = /\?size=2048$/g; ///تعديل غير اساسي
     const wlcImage = await fsn.readFile("./welcome111.png"); //اسم الصورة
     let result = await fetch(
@@ -3062,9 +3067,9 @@ client.on("guildMemberAdd", async member => {
     var imageHeight = 266; //ارتفاع الصورة
 
     //Avatar
-    var imageX = 270; //X coordinate
+    var imageX = 250; //X coordinate
     var imageY = 145; //Y coordinate
-    var imageRadius = 45; //نصف قطر الصورة الدائرية
+    var imageRadius = 50; //نصف قطر الصورة الدائرية
 
     //Member Name
     var nameSize = "12pt"; //حجم خط الاسم
@@ -3088,7 +3093,19 @@ client.on("guildMemberAdd", async member => {
     const attachment = new Attachment(buffer, filename);
     await channel.send(attachment);
   }
+}
 });
+
+client.on("message", async message => {
+if (message.content === '!reboot') {
+  if (message.author.id !== '406127752484487168') return;
+  message.channel.send('Restarted.')
+    client.destroy();
+    client.login(token);
+
+}
+});
+
 
 //تحديد روم الويلكم
 const wait = require("util").promisify(setTimeout);
