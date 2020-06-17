@@ -709,23 +709,14 @@ setInterval(() => {
 }
 });
 
-client.on('mesage', async message => {
-  //1 blacklisted words
-  let blacklisted = ['words', 'بغل'] //words put , after the word
 
-  //2 looking for words
-  let foundInText = false;
-  for (var i in blacklisted) { // loops through the blacklisted list
-    if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
-  }
-  // checks casesensitive words
+var profanities = ["test1", "test2"];
 
-  //3 deletes and send message
-    if (foundInText) {
-      message.delete();
-      message.channel.sendMessage('كلمات ممنوع داخل السيرفر!')
-  }
-});
+
+client.on('message', message => {
+  if(profanities.some(word => message.content.toLowerCase().includes(word))){
+    message.delete()
+  }})
 
 
  const cpuStat = require("cpu-stat");
