@@ -308,57 +308,57 @@ setInterval(() => {
   if (message.content.includes("1v1")) {
     message.delete(1);
     message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#715066435956899870> <#718187464111685695>")
+    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695>")
   }
   if (message.content.includes("اي حد يلعب")) {
     message.delete(1);
     message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#715066435956899870> <#718187464111685695>")
+    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695>")
   }
   if (message.content.includes("مين يلعب كرياتيف")) {
     message.delete(1);
     message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#715066435956899870> <#718187464111685695>")
+    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695>")
   }
   if (message.content.includes("وان في وان")) {
     message.delete(1);
     message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#715066435956899870> <#718187464111685695>")
+    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695>")
   }
   if (message.content.includes("بوكس فايت")) {
     message.delete(1);
     message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#715066435956899870> <#718187464111685695> <#716268576587120730>")
+    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>")
   }
   if (message.content.includes("ابغي واحد يلعب")) {
     message.delete(1);
     message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#715066435956899870> <#718187464111685695> <#716268576587120730>")
+    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>")
   }
   if (message.content.includes("ابغى واحد يلعب تريو")) {
     message.delete(1);
     message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#715066435956899870> <#718187464111685695> <#716268576587120730>")
+    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>")
   }
   if (message.content.includes("boxfight")) {
     message.delete(1);
     message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#715066435956899870> <#718187464111685695> <#716268576587120730>")
+    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>")
   }
   if (message.content.includes("box fight")) {
     message.delete(1);
     message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#715066435956899870> <#718187464111685695> <#716268576587120730>")
+    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>")
   }
   if (message.content.includes("arena")) {
     message.delete(1);
     message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#715066435956899870> <#718187464111685695> <#716268576587120730>")
+    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>")
   }
   if (message.content.includes("ارينا")) {
     message.delete(1);
     message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#715066435956899870> <#718187464111685695> <#716268576587120730>")
+    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>")
   }
   if (message.content.includes("كلتبن")) {
     message.delete(1);
