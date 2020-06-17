@@ -537,7 +537,15 @@ client.on("message", message => {
   }
 });
 
+client.on("message", async message => {
+if (message.content === '!reboot') {
+  if (message.author.id !== '406127752484487168') return;
+  message.channel.send('Restarted.')
+    client.destroy();
+    client.login(token);
 
+}
+});
 
 
 /*client.on("message", message => {
