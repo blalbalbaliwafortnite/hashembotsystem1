@@ -311,6 +311,11 @@ setInterval(() => {
     message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
     message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695>")
   }
+  if (message.content.includes("تلعب")) {
+    message.delete(1);
+    message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
+    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695>")
+  }
   if (message.content.includes("اي حد يلعب")) {
     message.delete(1);
     message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
