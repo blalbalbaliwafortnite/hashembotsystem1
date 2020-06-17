@@ -224,7 +224,7 @@ if(msg.content.startsWith(prefix+"reaction")){
 }
 });
 
-var emojiname = ["like","dislike"];
+var emojiname = ["<:pepeOK:719305431767449621> ","<:pepeOK:719305431767449621> "];
 
 //    Add role name
 var rolename=["PC","Mobile"];
