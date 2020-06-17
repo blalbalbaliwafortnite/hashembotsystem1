@@ -158,7 +158,8 @@ client.on('message', message => {
     else {
       ++msgCount;
       if(parseInt(msgCount) === LIMIT) {
-        const role = message.guild.roles.get('718550471882571868');
+        const role = message.guild.roles.find(role => role.name === "Muted");
+          
         message.member.addRole(role);
         message.reply('** لقد تم اعطائك ميوت لمدة ساعتين السبب : سبام :warning:**');
           // .addField("", ``, true)
