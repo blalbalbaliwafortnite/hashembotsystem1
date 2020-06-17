@@ -513,14 +513,6 @@ setInterval(() => {
   message.member.removeRole(role);
 }, 14400000);
   }
-  if (message.content.includes("بغل")) {
-    message.delete(1);
-   message.member.addRole(role);
-    message.channel.sendMessage("**لقد تم اعطائك ميوت السبب كلام بذئ مدة الميوت 4 ساعات ** :warning: " + message.author)
-setInterval(() => {
-  message.member.removeRole(role);
-}, 14400000);
-  }
   if (message.content.includes("قحبة")) {
     message.delete(1);
    message.member.addRole(role);
@@ -718,7 +710,22 @@ setInterval(() => {
 });
 
 
+  //1 blacklisted words
+  let blacklisted = ['بغل'] //words put , after the word
 
+  //2 looking for words
+  let foundInText = false;
+  for (var i in blacklisted) { // loops through the blacklisted list
+    if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true;
+  }
+  // checks casesensitive words
+
+  //3 deletes and send message
+    if (foundInText) {
+      message.delete();
+      message.channel.sendMessage('كلمات ممنوع داخل السيرفر!')
+  }
+});
 
 
  const cpuStat = require("cpu-stat");
