@@ -1,16 +1,3 @@
-require("events").EventEmitter.defaultMaxListeners = 200;
-const http = require("http");
-const express = require("express");
-const app = express();
-app.get("/", (request, response) => {
-  response.sendStatus(200);
-});
-app.listen(process.env.PORT);
-setInterval(() => {
-  http.get(`http://diagnostic-classy-boater.glitch.me/`);
-}, 9000);
-
-////بكجات
 const { Client, RichEmbed } = require("discord.js");
 var { Util } = require("discord.js");
 const { prefix, devs, token } = require("./config");
@@ -171,7 +158,7 @@ client.on('message', message => {
     else {
       ++msgCount;
       if(parseInt(msgCount) === LIMIT) {
-        const role = message.guild.roles.find(role => role.name === "Muted");
+        const role = message.guild.roles.find(role => role.name === "Moderators");
         message.member.addRole(role);
         message.reply('** لقد تم اعطائك ميوت لمدة ساعتين السبب : سبام :warning:**');
           // .addField("", ``, true)
