@@ -711,7 +711,7 @@ setInterval(() => {
 
 client.on('mesage', async message => {
   //1 blacklisted words
-  let blacklisted = ['بغل'] //words put , after the word
+  let blacklisted = ['words', 'بغل'] //words put , after the word
 
   //2 looking for words
   let foundInText = false;
