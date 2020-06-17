@@ -306,7 +306,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    if (message.channel.id === '718209175783735378') {
+    if (message.channel.id === '715066435956899870') {
   if(chatal3am.some(word => message.content.toLowerCase().includes(word))){
     message.delete()
     message.channel.sendMessage("دور هنا مو لازم شات العام" + message.author)
