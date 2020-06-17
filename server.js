@@ -3303,6 +3303,15 @@ client.on("message", message => {
     message.channel.send(`\`#\` ${reply}`);
   }
 });
+const { Canvas } = require("canvas-constructor");
+const { Attachment } = require("discord.js");
+const { resolve, join } = require("path");
+const fetch = require("node-fetch");
+const prettySeconds = require("pretty-seconds");
+const fsn = require("fs-nextra");
+
+const welcome = JSON.parse(fs.readFileSync("./welcomer.json", "utf8")); //ملف تخزين كود الويلكم
+
 //كود الويلكم
 
 client.on("guildMemberAdd", async member => {
@@ -3336,18 +3345,18 @@ client.on("guildMemberAdd", async member => {
     var imageHeight = 266; //ارتفاع الصورة
 
     //Avatar
-    var imageX = 294; //X coordinate
-    var imageY = 110; //Y coordinate
-    var imageRadius = 35; //نصف قطر الصورة الدائرية
+    var imageX = 250; //X coordinate
+    var imageY = 145; //Y coordinate
+    var imageRadius = 110; //نصف قطر الصورة الدائرية
 
     //Member Name
-    var nameSize = "13pt"; //حجم خط الاسم
+    var nameSize = "12pt"; //حجم خط الاسم
     var nameKind = "Source Sans Pro (OT1)"; //نوع خط الاسم
-    var nameColor = "#ffffff"; //لون خط الاسم
+    var nameColor = "#ff9933"; //لون خط الاسم
 
     //Name Position
-    var nameX = 294; //position x
-    var nameY = 170; //position y
+    var nameX = 247; //position x
+    var nameY = 275; //position y
 
     let buffer = await new Canvas(500, 300)
       .addImage(wlcImage, 0, 0, imageWidth, imageHeight)
@@ -3377,7 +3386,7 @@ client.on("ready", async () => {
 });
 var gg2;
 
-/*client.on("guildMemberAdd", async member => {
+client.on("guildMemberAdd", async member => {
   if (!welcome[member.guild.id])
     welcome[member.guild.id] = {
       by: "Off",
@@ -3391,12 +3400,12 @@ var gg2;
   if (!channel) return;
 
   await member.guild.fetchInvites().then(async guildInvites => {
-    //const ei = await invites[member.guild.id];
-    //invites[member.guild.id] = guildInvites;
-    //const invite = await guildInvites.find(i => ei.get(i.code).uses < i.uses);
-    //const inviter1 = await invite.inviter;
-    //const inviter =
-     // (await client.users.get(invite.inviter.id)) ||
+    const ei = await invites[member.guild.id];
+    invites[member.guild.id] = guildInvites;
+    const invite = await guildInvites.find(i => ei.get(i.code).uses < i.uses);
+    const inviter1 = await invite.inviter;
+    const inviter =
+      (await client.users.get(invite.inviter.id)) ||
       client.users.get(member.guild.owner.user.id);
     const logChannel = member.guild.channels.find(
       channel => channel.name === `${welcome[member.guild.id].channel}`
@@ -3406,12 +3415,12 @@ var gg2;
       "[member]",
       `<@!${member.id}>`
     );
-/*    if (!inviter1 || !inviter1.id) {
+    if (!inviter1 || !inviter1.id) {
       gg2 = await gg1.replace("[inviter]", `<@${member.guild.ownerID}>`);
     } else {
       gg2 = await gg1.replace("[inviter]", `<@${inviter1.id}>`);
-    }*/
- /*   setTimeout(() => {
+    }
+    setTimeout(() => {
       logChannel.send(`${gg2}`);
     }, 2000);
     fs.writeFile("./welcome.json", JSON.stringify(welcome), err => {
@@ -3420,28 +3429,12 @@ var gg2;
           console.error(err);
         });
     });
-  });*/
-
-
-
-
-
-const { Canvas } = require("canvas-constructor");
-const { Attachment } = require("discord.js");
-const { resolve, join } = require("path");
-const fetch = require("node-fetch");
-const prettySeconds = require("pretty-seconds");
-const fsn = require("fs-nextra");
-
-const welcome = JSON.parse(fs.readFileSync("./welcomer.json", "utf8")); //ملف تخزين كود الويلكم
-
-
-
+  });
+});
 client.on("message", async message => {
   if (!message.channel.guild) return;
   let room = message.content.split(" ").slice(1);
   let findroom = message.guild.channels.find(r => r.name == room);
-  if(enabled){
   if (message.content.startsWith(prefix + "setWelcomer")) {
     if (!welcome[message.guild.id]) {
       if (!message.channel.guild)
@@ -3502,12 +3495,10 @@ client.on("message", async message => {
       });
     }
   }
-  }
 });
 
 client.on("message", async message => {
   let messageArray = message.content.split(" ");
-  if(enabled){
   if (message.content.startsWith(prefix + "setMessage")) {
     if (!welcome[message.guild.id] || !welcome[message.guild.id].onoff == "On")
       return message.channel.send(
@@ -3559,22 +3550,6 @@ Ex :
             });
           });
       });
-  }
-  }
-});
-
-///كود منشن بوتات
-
-client.on("message", message => {
-  if(enabled){
-  if (message.content === prefix + "ls") {
-    var list_all = [];
-    message.guild.members.forEach(bb => {
-      if (!bb.user.bot) return;
-      list_all.push(`<@${bb.user.id}>`);
-    });
-    message.channel.send(list_all.join(", "));
-  }
   }
 });
 
