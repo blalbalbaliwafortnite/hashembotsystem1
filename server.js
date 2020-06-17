@@ -381,7 +381,7 @@ client.on('message', message => {
     const role = message.guild.roles.get('718550471882571868');
   if(profanities.some(word => message.content.toLowerCase().includes(word))){
     message.delete()
-    message.channel.sendMessage("**لقد تم كتمك بسبب كلام بذيئ مدة ** :warning: " + message.author)
+    message.channel.sendMessage("**لقد تم كتمه ميوت بسبب كلام سيئ ** :warning: " + message.author)
     message.member.addRole(role);
  setInterval(() => {
   message.member.removeRole(role);
