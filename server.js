@@ -224,7 +224,7 @@ if(msg.content.startsWith(prefix+"reaction")){
 }
 });
 
-var emojiname = ["✔️","⭕"];
+var emojiname = ["like","dislike"];
 
 //    Add role name
 var rolename=["PC","Mobile"];
