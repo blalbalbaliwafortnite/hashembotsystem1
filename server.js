@@ -3140,7 +3140,8 @@ client.on("message", async message => {
       welcome[message.guild.id] = {
         channel: room,
         onoff: "On",
-        by: "On"
+        by: "On",
+        msg: ""
       };
       fs.writeFile("./welcomer.json", JSON.stringify(welcome), err => {
         if (err) console.error(err);
