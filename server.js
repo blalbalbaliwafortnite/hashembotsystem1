@@ -3136,17 +3136,7 @@ client.on("message", async message => {
         );
       if (!room) return message.channel.send("Please Type The Channel Name");
       if (!findroom) return message.channel.send("Cant Find This Channel");
-      let embed = new Discord.RichEmbed()
-        .setTitle("**Done The Welcome Has Been Setup**")
-        .addField("Channel:", `${room}`)
-        .addField("Requested By:", `${message.author}`)
-        .addField(
-          "Default Message:",
-          `**Welcome [member], You Joined by [inviter] invite**`
-        )
-        .setThumbnail(message.author.avatarURL)
-        .setFooter(`${client.user.username}`);
-      message.channel.sendEmbed(embed);
+      message.channel.send("تم تفعيل الروم مخصص للويلكوم ${room}")
       welcome[message.guild.id] = {
         channel: room,
         onoff: "On",
