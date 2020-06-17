@@ -288,105 +288,26 @@ client.on("message", message => {
   });
 
 
-
-
-
-
-
-client.on("message", (message) => {
-        const role = message.guild.roles.get('718550471882571868');
-    if (message.channel.id === '718550471882571868') {
-    } else {
-    if (message.channel.id === '715066435956899870') {
-  if (message.content.includes("1v1")) {
-    message.delete(1);
-    message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695>")
-  }
-  if (message.content.includes("اي حد يلعب")) {
-    message.delete(1);
-    message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695>")
-  }
-  if (message.content.includes("مين يلعب كرياتيف")) {
-    message.delete(1);
-    message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695>")
-  }
-  if (message.content.includes("وان في وان")) {
-    message.delete(1);
-    message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695>")
-  }
-  if (message.content.includes("بوكس فايت")) {
-    message.delete(1);
-    message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>")
-  }
-  if (message.content.includes("ابغي واحد يلعب")) {
-    message.delete(1);
-    message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>")
-  }
-  if (message.content.includes("ابغى واحد يلعب تريو")) {
-    message.delete(1);
-    message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>")
-  }
-  if (message.content.includes("boxfight")) {
-    message.delete(1);
-    message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>")
-  }
-  if (message.content.includes("مين يلعب")) {
-    message.delete(1);
-    message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>")
-  }
-  if (message.content.includes("box fight")) {
-    message.delete(1);
-    message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>")
-  }
-  if (message.content.includes("arena")) {
-    message.delete(1);
-    message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>")
-  }
-  if (message.content.includes("Arena")) {
-    message.delete(1);
-    message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>")
-  }
-  if (message.content.includes("ارينا")) {
-    message.delete(1);
-    message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>")
-  }
-  if (message.content.includes("تلعب معي")) {
-    message.delete(1);
-    message.channel.sendMessage("دور هنا علي الناس تبغى تلعب معاهم مو لازم تكتب ب شات العام" + message.author)
-    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>")
-  }
-    } else { 
-    }
-}
-});
-
-
-var profanities = ["بغل", "كس امك","كس","كلتبن","كل تبن","الله يلعن امك","امك قحب","امك منيوك","امك","امك ملعونه","امك نكته","امك شرموطه","شرموطة امك","امك شرموطة","الله يلعن امك","يلعن امك","تخسي","مص","مص زبي","تخزي","قحب","امك قحب","قحب امك","امك نكتها","مص زبي","لحست شرموطة امك","شرموطة","كس ابوك","كس اهلك","كس دين ربك","كس عائلتك","كس امكم","فاك","فاك يو","فاكيو","فاك","klb","enta_klb","kl 5ra","زب","kol 5ra","ya zft","omk nikha","omk khba","elhs zeby","ya zeft","يا حيوان","امك حيوانه","يا زبالة","يا زب","يا حيوان","وتفاك","كلب","انت كلب","enikk","انيكك","معوق","حمار","نيك","انيك","حمار","قحبة","قحب","زبي","خنثي","يلعن","هطف","بزر","متناك","كوسمك","مس زبي","ادعس امك"];
+var chatmembers = ["بغل", "كس امك","كس","كلتبن","كل تبن","الله يلعن امك","امك قحب","امك منيوك","امك","امك ملعونه","امك نكته","امك شرموطه","شرموطة امك","امك شرموطة","الله يلعن امك","يلعن امك","تخسي","مص","مص زبي","تخزي","قحب","امك قحب","قحب امك","امك نكتها","مص زبي","لحست شرموطة امك","شرموطة","كس ابوك","كس اهلك","كس دين ربك","كس عائلتك","كس امكم","كلزق","فاك يو","فاكيو","فاك","klb","enta_klb","kl 5ra","زب","kol 5ra","ya zft","omk nikha","omk khba","elhs zeby","ya zeft","يا حيوان","امك حيوانه","يا زبالة","يا زب","يا حيوان","وتفاك","كلب","انت كلب","enikk","انيكك","معوق","حمار","نيك","انيك","حمار","قحبة","قحب","زبي","خنثي","يلعن","هطف","بزر","متناك","كوسمك","مس زبي","ادعس امك","كل زق"];
+var chatal3am = ["تلعب معي","تلعب 1v1","1v1","boxfight","arena","trio","eu","middle","اوروبي","ميدل ايست","ارينا","Arena","بوكس فايت","ناقصنا واحد","مين يلعب بوكس فايت","مين يلعب ارينا","يبثلي","ابغي واحد يلعب تريو","مين يلعب كرياتيف","كرياتيف","وان في وانابغي واحد يلعب","اي احد يلعب",""];
 
 
 client.on('message', message => {
     const role = message.guild.roles.get('718550471882571868');
-  if(profanities.some(word => message.content.toLowerCase().includes(word))){
+  if(chatmembers.some(word => message.content.toLowerCase().includes(word))){
     message.delete()
     message.channel.sendMessage("**لقد تم كتمه ميوت بسبب كلام سيئ ** :warning: " + message.author)
     message.member.addRole(role);
  setInterval(() => {
   message.member.removeRole(role);
 }, 14400000);
-  }})
+  }
+  if(chatal3am.some(word => message.content.toLowerCase().includes(word))){
+    message.delete()
+    message.channel.sendMessage("دور هنا مو لازم شات العام" + message.author)
+    message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>" + message.author)
+  }  
+});
 
 
  const cpuStat = require("cpu-stat");
