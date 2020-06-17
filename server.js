@@ -377,7 +377,7 @@ client.on("message", (message) => {
 var profanities = ["بغل", "كس امك","كس","كلتبن","كل تبن","الله يلعن امك","امك قحب","امك منيوك","امك","امك ملعونه","امك نكته","امك شرموطه","شرموطة امك","امك شرموطة","الله يلعن امك","يلعن امك","تخسي","مص","مص زبي","تخزي","قحب","امك قحب","قحب امك","امك نكتها","مص زبي","لحست شرموطة امك","شرموطة","كس ابوك","كس اهلك","كس دين ربك","كس عائلتك","كس امكم","فاك","فاك يو","فاكيو","فاك","klb","enta_klb","kl 5ra","زب","kol 5ra","ya zft","omk nikha","omk khba","elhs zeby","ya zeft","يا حيوان","امك حيوانه","يا زبالة","يا زب","يا حيوان","وتفاك","كلب","انت كلب","enikk","انيكك","معوق","حمار","نيك","انيك","حمار","قحبة","قحب","زبي","خنثي","يلعن","هطف","بزر","متناك","كوسمك","مس زبي","ادعس امك",""];
 
 
-client.on('message', message => {
+/*client.on('message', message => {
     const role = message.guild.roles.get('718550471882571868');
   if(profanities.some(word => message.content.toLowerCase().includes(word))){
     message.delete()
@@ -386,7 +386,7 @@ client.on('message', message => {
  setInterval(() => {
   message.member.removeRole(role);
 }, 14400000);
-  }})
+  }})*/
 
 
  const cpuStat = require("cpu-stat");
