@@ -329,13 +329,13 @@ client.on("message", message => {
   });
 
 
-var chatal3am = ["تلعب معي","تلعب 1v1","1v1","boxfight","arena","trio","eu","middle","اوروبي","ميدل ايست","ارينا","Arena","بوكس فايت","ناقصنا واحد","مين يلعب بوكس فايت","مين يلعب ارينا","يبثلي","ابغي واحد يلعب تريو","مين يلعب كرياتيف","كرياتيف","وان في وانابغي واحد يلعب","اي احد يلعب","مدل 4v4"];
+var chatal3am = ["تلعب معي","تلعب 1v1","1v1","boxfight","arena","trio","eu","middle","اوروبي","ميدل ايست","ارينا","Arena","بوكس فايت","ناقصنا واحد","مين يلعب بوكس فايت","مين يلعب ارينا","يبثلي","ابغي واحد يلعب تريو","مين يلعب كرياتيف","كرياتيف","وان في وانابغي واحد يلعب","اي احد يلعب","مدل 4v4", "مين يلعب", "Europe", "europe", "middle", "مدل", "ميدل"];
 
 
 client.on('message', message => {
     if (message.channel.id === '715066435956899870') {
   if(chatal3am.some(word => message.content.toLowerCase().includes(word))){
-    message.delete()
+    message.delete(1)
     message.channel.sendMessage("دور هنا مو لازم شات العام" + message.author)
     message.channel.sendMessage("<#718190508354175158> <#718187163082031177> <#716295431327580250> <#718187464111685695> <#716268576587120730>")
   }
