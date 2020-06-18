@@ -841,7 +841,8 @@ client.on('messageReactionAdd', (reaction, user) => {
 
 
 client.on('message', message => {
-    if(message.content.split(' ')[0].toLowerCase() == prefix + 'stats') {
+    if (message.channel.id === '718209175783735378') {
+    if(message.content.split(' ')[0].toLowerCase() == prefix + 'state') {
                if(message.author.bot) return;
         if(!message.channel.guild) return message.reply(' Error : \` Guild Command \`');
     message.channel.send({
@@ -854,29 +855,8 @@ client.on('message', message => {
              .setColor('#36393e')
     })
 }
+    }
 });
-
-
-      client.on("message", message => {
-    if (message.content.toLowerCase() === prefix + "about") {
-        message.delete(5000)
-        if(!message.channel.guild) return;
-        const e = new Discord.RichEmbed()
-        .setColor('#36393e')
-        .setTitle('Check Your DM’s')
-     const embed = new Discord.RichEmbed()
-         .setColor('#36393e')
-         .setTitle('** ﻙﺍﺮﺘﺷﻼﻟ ﺎﻨﻫ ﻂﻐﺿﺍ **')
-         .setURL('https://www.youtube.com/channel/UCb0HLm_jF-k72G2DN4yX1sA')
-         .setImage('https://i.ytimg.com/vi/NXkxpt5q3uI/maxresdefault.jpg')
-         .setDescription(`**
-         \`\`\` بسم الله الرحمن الرحيم , اتمني انك تشترك ف قناتي :\`\`\`         
-**`)
-   message.channel.send(e).then(m => m.delete(5000))
-   message.author.sendEmbed(embed).catch(error => message.reply('Your DM’s is CLosed'))
-
-   }
-   });
 
 
 
@@ -890,6 +870,7 @@ client.on('message', message => {
 
 ////كود معلومات البوت
 client.on("message", message => {
+    if (message.channel.id === '718209175783735378') {
     if(enabled){
   if (message.content === prefix + "bot") {
     const bot = new Discord.RichEmbed()
@@ -910,9 +891,11 @@ client.on("message", message => {
     message.channel.send(bot);
   }
     }
+    }
 });
 
 client.on("message", async message => {
+    if (message.channel.id === '718209175783735378') {
     if(enabled){
   if (message.content.startsWith(prefix + "inf")) {
     //// وهون الامر طبعا
@@ -975,6 +958,7 @@ client.on("message", async message => {
       message.channel.send(inviteInfo);
     });
   }
+    }
     }
 });
 
@@ -2209,6 +2193,7 @@ client.on("message", message => {
 /////كود سرعة البوت او البينق
 client.on("message", message => {
   if (!message.channel.guild) return;
+    if (message.channel.id === '718209175783735378') {
   if(enabled){
   if (message.content.startsWith(prefix + "ping")) {
     if (message.author.bot) return;
@@ -2226,6 +2211,7 @@ client.on("message", message => {
     message.channel.send(E1ping);
   }
   }
+    }
 });
 
 let anti = JSON.parse(fs.readFileSync("./antigrefff.json", "UTF8"));
