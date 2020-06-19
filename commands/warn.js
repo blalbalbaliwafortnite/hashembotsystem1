@@ -62,7 +62,7 @@ module.exports.run = async (bot, message, args) => {
     }, 86400000)
   }
   
-  if(warns[wUser.id].warns == 2){
+  if(warns[wUser.id].warns == 3){
     let muterole = message.guild.roles.find(`name`, "Muted");
     if(!muterole) return message.reply("يجب عليك انشاء رول باسم Muted");
 
