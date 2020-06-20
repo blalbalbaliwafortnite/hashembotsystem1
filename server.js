@@ -99,7 +99,7 @@ client.on("ready", () => {
 const activities_list = [
     "بوت تجريبي / State: ON", 
     "أمــر المساعد !help",
-    "لاتنس تستخدم كود H2H", 
+    "لاتنس تستخدم كود HSH", 
     ]; // creates an arraylist containing phrases you want your bot to switch through.
 
 client.on('ready', () => {
