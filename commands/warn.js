@@ -43,7 +43,7 @@ module.exports.run = async (bot, message, args) => {
     message.channel.send(`<@${wUser.id}> تم اعطائه ميوت لمده ساعة`);
     console.log("mute one hour");
 
-    setInterval(function(){
+    setTimeout(function(){
       wUser.removeRole(muterole.id)
       message.reply(`<@${wUser.id}> لقد تم فك الميوت علي العضو`)
     }, 3600000)
@@ -56,7 +56,7 @@ module.exports.run = async (bot, message, args) => {
     await(wUser.addRole(muterole.id));
     message.channel.send(`<@${wUser.id}> تم اعطائه ميوت لمده يوم`);
 
-    setInterval(function(){
+    setTimeout(function(){
       wUser.removeRole(muterole.id)
       message.reply(`<@${wUser.id}> لقد تم فك الميوت علي العضو`)
     }, 86400000)
@@ -69,7 +69,7 @@ module.exports.run = async (bot, message, args) => {
     await(wUser.addRole(muterole.id));
     message.channel.send(`<@${wUser.id}> تم اعطائه ميوت لمده يومين`);
 
-    setInterval(function(){
+    setTimeout(function(){
       wUser.removeRole(muterole.id)
       message.reply(`<@${wUser.id}> لقد تم فك الميوت علي العضو`)
     }, 172800000)
