@@ -963,6 +963,7 @@ client.on("message", async message => {
 });
 
 client.on("message", message => {
+    if (message.channel.id === '718209175783735378') {
   if(enabled){
   if (message.content.split(" ")[0] === prefix + "avt") {
     if (message.author.bot || message.channel.type == "dm") return;
@@ -982,6 +983,7 @@ client.on("message", message => {
       .catch(() => message.channel.send(`يجب عليك وضع ايدي الشخص`));
   } // Julian
   }
+    }
 }); // Codes - Toxic Codes
 
 const SQLite = require("sqlite"); // SQLpackage
@@ -3703,6 +3705,7 @@ client.on("message", message => {
   }
 });
 client.on("message", async msg => {
+    if (message.channel.id === '718209175783735378') {
   if (msg.author.bot) return undefined;
   if (!msg.content.startsWith(prefix)) return undefined;
 
@@ -3728,5 +3731,6 @@ client.on("message", async msg => {
       let embed = new Discord.RichEmbed().setColor("#5074b3").setImage(sicon);
       msg.channel.send({ embed });
     }
+	}
   }
 });
