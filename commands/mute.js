@@ -2,12 +2,11 @@ const Discord = require("discord.js");
 const ms = require("ms");
 
 module.exports.run = async (bot, message, args) => {
-
+  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("لايمكنني ذالك لانه لديه الخاصيه `MANAGE_MESSAGES`");
   //!tempmute @user 1s/m/h/d
 
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply("**لايمكنني ايجاد العضو**");
-  if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("لايمكنني ذالك لانه لديه الخاصيه `MANAGE_MESSAGES`");
   let muterole = message.guild.roles.find(`name`, "Muted");
   //start of create role
   if(!muterole){
