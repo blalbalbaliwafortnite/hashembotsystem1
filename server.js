@@ -464,10 +464,7 @@ client.on("message", message => {
   if(enabled){
   if (command === prefix + "unmute") {
     if (message.author.bot) return;
-    if (!message.member.hasPermission("MANAGE_ROLES"))
-      return message
-        .reply("** لا يوجد لديك برمشن 'Manage Roles' **")
-        .catch(console.error);
+    if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("** لا يوجد لديك برمشن 'Manage Roles' **").catch(console.error);
     let user = message.mentions.users.first();
     let modlog = client.channels.find(gg => gg.name === "log");
     let muteRole = client.guilds
