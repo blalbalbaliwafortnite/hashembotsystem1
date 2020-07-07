@@ -4,7 +4,7 @@ const ms = require("ms");
 module.exports.run = async (bot, message, args) => {
   if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("لايمكنني ذالك لانه لديه الخاصيه `MANAGE_MESSAGES`");
   //!tempmute @user 1s/m/h/d
-
+  if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply("**ليس لديك صلاحيه كافيه لفعل ذالك**").catch(console.error);
   let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!tomute) return message.reply("**لايمكنني ايجاد العضو**");
   let muterole = message.guild.roles.find(`name`, "Muted");
