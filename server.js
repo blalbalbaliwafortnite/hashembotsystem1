@@ -718,16 +718,6 @@ client.on("guildMemberRemove", member => {
 const embedColor = "#AA8ED6";
 const TitleServer = "# killerhashem";
 
-client.on("message", (message) => {
-  
-if (message.channel.id === "719347843353018408") {
-setInterval(() => {
-  message.channel.bulkDelete(20);
-}, 10000);
-}
-  
-});
-
 
 client.on("message", (message) => {
   if (!message.content.startsWith(prefix) || message.author.bot) return;
