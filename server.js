@@ -144,67 +144,6 @@ client.on("message", message => {
   }
 });
 
-client.on('message', message => {
-      var logChannel = client.channels.get('720379297742716988');
-
-  if(message.author.bot) return;
-  if(usersMap.has(message.author.id)) {
-    const userData = usersMap.get(message.author.id);
-    const { lastMessage, timer } = userData;
-    const difference = message.createdTimestamp - lastMessage.createdTimestamp;
-    let msgCount = userData.msgCount;
-    console.log(difference);
-    if(difference > DIFF) {
-      clearTimeout(timer);
-      console.log('Cleared timeout');
-      userData.msgCount = 1;
-      userData.lastMessage = message;
-      userData.timer = setTimeout(() => {
-        usersMap.delete(message.author.id);
-        console.log('Removed from RESET.');
-      }, TIME);
-      usersMap.set(message.author.id, userData);
-    }
-    else {
-      ++msgCount;
-      if(parseInt(msgCount) === LIMIT) {
-        const role = message.guild.roles.find(role => role.name === "Muted");
-          
-        message.member.addRole(role);
-        message.reply('** لقد تم اعطائك ميوت لمدة ساعتين السبب : سبام :warning:**');
-          // .addField("", ``, true)
-        setTimeout(() => {
-          message.member.removeRole(role);
-          message.reply('** لقد تم فك ميوت عليك يرجى عدم سبام مره اخر :white_check_mark: **');
-              const embed2 = new Discord.RichEmbed()
-           .setDescription(`**لقد تم فك العضو الميوت السبب سبام ${message.author}**`)
-           .setColor("GREEN")
-            logChannel.send(embed2);
-        }, TIME);
-  if (!logChannel) return;
-              const embed = new Discord.RichEmbed()
-           .setDescription(`**لقد تم اعطائه ميوت السبب السبام! اسم العضو ${message.author}**`)
-           .setColor("RED")
-            logChannel.send(embed);
-      } else {
-        userData.msgCount = msgCount;
-        usersMap.set(message.author.id, userData);
-      }
-    }
-  }
-  else {
-    let fn = setTimeout(() => {
-      usersMap.delete(message.author.id);
-      console.log('Removed from map.');
-    }, TIME);
-    usersMap.set(message.author.id, {
-      msgCount: 1,
-      lastMessage: message,
-      timer: fn
-    });
-  }
-});
-
 
 
 
