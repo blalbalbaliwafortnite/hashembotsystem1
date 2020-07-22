@@ -1210,7 +1210,7 @@ client.on("message", function(message) {
     case "clear":
       message.delete();
       if (!message.channel.guild) return;
-      if (message.member.hasPermission(0x2000)) {
+      if (message.member.hasPermission("MANAGE_CHANNELS")) {
         if (!args[1]) {
           message.channel.fetchMessages().then(messages => {
             message.channel.bulkDelete(messages);
