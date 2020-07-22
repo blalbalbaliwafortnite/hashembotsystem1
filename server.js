@@ -2066,14 +2066,14 @@ client.on("ready", () => {
 client.on("message", message => {
   if(enabled){
   if (message.content === "السلام عليكم") {
-    message.channel.send(":heart: وعليكم السلام ورحمة الله وبركاته :heart:");
+    message.channel.send("<:HSH:735358876823584799> وعليكم السلام ورحمة الله وبركاته");
   }
   }
   });
 client.on("message", message => {
   if(enabled){
   if (message.content === "سلام عليكم") {
-    message.channel.send(":heart: وعليكم السلام ورحمة الله وبركاته :heart:");
+    message.channel.send("<:HSH:735358876823584799> وعليكم السلام ورحمة الله وبركاته");
   }
   }
   });
@@ -2081,7 +2081,7 @@ client.on("message", message => {
 client.on("message", message => {
   if(enabled){
   if (message.content === "السلام عليكم ورحمة الله وبركاته") {
-    message.channel.send(":heart: وعليكم السلام ورحمة الله وبركاته :heart:");
+    message.channel.send("<:HSH:735358876823584799> وعليكم السلام ورحمة الله وبركاته");
   }
   }
 });
@@ -2089,7 +2089,7 @@ client.on("message", message => {
 client.on("message", message => {
   if(enabled){
   if (message.content === "باك") {
-    message.channel.send("ولكم من جديد ي بطــل :heart:");
+    message.channel.send("ولكم باك من جديد");
   }
   }
 });
