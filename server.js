@@ -37,7 +37,7 @@ const LIMIT = 5;
 const TIME = 7200000;
 const DIFF = 3000;
 
-client.login("NzIwNzI5MjAxOTYzMDQwODkw.XxgwZg.r0TX0ssdGKBnJJtnirVZ56F0tAg");
+client.login(process.env.TOKEN);
 const queue = new Map();
 var table = require("table").table;
 const Discord = require("discord.js");
@@ -462,7 +462,7 @@ if (message.content === '!restart') {
   if (message.author.id !== '406127752484487168') return;
   message.channel.send('Restarted <:__:735358969186484256>')
     client.destroy();
-    client.login("NzIwNzI5MjAxOTYzMDQwODkw.XxgwZg.r0TX0ssdGKBnJJtnirVZ56F0tAg");
+    client.login(process.env.TOKEN);
 
 }
 });
