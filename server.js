@@ -626,8 +626,8 @@ client.on('messageReactionRemove', (messageReaction, user) => {
 
 
 let countChannel = {
-  total: "719261514657169468",
-  serverID: "713180339820036166"
+  total: "xxxxxxxxxxxxxxxxxx",
+  serverID: "xxxxxxxxxxxxxxxxx"
 } 
 // Replace ID with the channel ID and server ID (for serverID)
 // Follow the instructions: https://youtu.be/UmY0Gsx3KlI?t=44
