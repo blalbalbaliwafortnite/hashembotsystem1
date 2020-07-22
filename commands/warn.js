@@ -5,7 +5,7 @@ let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
 module.exports.run = async (bot, message, args) => {
 
- if (!message.guild.member(message.author).hasPermission('ADMINISTRATOR')) { return message.reply('ليس لديــك صلآحيـه!"'); }
+ if (!message.guild.member(message.author).hasPermission('MANAGE_CHANNELS')) { return message.reply('ليس لديــك صلآحيـه!"'); }
   let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
   if(!wUser) return message.reply("**لايمكنني ايجاد العضو**");
   if(wUser.hasPermission("MANAGE_MESSAGES")) return message.reply("لايمكنني ذالك لانه لديه الخاصيه `MANAGE_MESSAGES`");
