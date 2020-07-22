@@ -3384,7 +3384,7 @@ client.on("message", message => {
   }
 });
 client.on("message", msg => {
-    if (message.channel.id === '718209175783735378') {
+    if (msg.channel.id === '718209175783735378') {
   if (msg.author.bot) return undefined;
   if (!msg.content.startsWith(prefix)) return undefined;
 
