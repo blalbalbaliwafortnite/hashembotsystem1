@@ -37,7 +37,7 @@ const LIMIT = 5;
 const TIME = 7200000;
 const DIFF = 3000;
 
-client.login("NzIwNzI5MjAxOTYzMDQwODkw.XxebZw.WE1xerJn5XAN1jd6OfzyBz7CssY");
+client.login("NzIwNzI5MjAxOTYzMDQwODkw.Xxev1w.tfM6Wj0aCbe6PTUpZJCj0phV8d0");
 const queue = new Map();
 var table = require("table").table;
 const Discord = require("discord.js");
@@ -462,7 +462,7 @@ if (message.content === '!reboot') {
   if (message.author.id !== '406127752484487168') return;
   message.channel.send('Restarted.')
     client.destroy();
-    client.login("NzIwNzI5MjAxOTYzMDQwODkw.XxebZw.WE1xerJn5XAN1jd6OfzyBz7CssY");
+    client.login("NzIwNzI5MjAxOTYzMDQwODkw.Xxev1w.tfM6Wj0aCbe6PTUpZJCj0phV8d0");
 
 }
 });
