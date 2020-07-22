@@ -37,7 +37,7 @@ const LIMIT = 5;
 const TIME = 7200000;
 const DIFF = 3000;
 
-client.login("NzIwNzI5MjAxOTYzMDQwODkw.XxhbLw.rwIyeoNpEja4zegOXMgZddk0d2s");
+client.login("NzIwNzI5MjAxOTYzMDQwODkw.XxhqTA.VsvAPLA7DnUFmcE3CfFZ9-0VUYI");
 const queue = new Map();
 var table = require("table").table;
 const Discord = require("discord.js");
@@ -456,58 +456,6 @@ client.on("message", message => {
   }
   }
 });
-
-client.on("message", async message => {
-if (message.content === '!restart') {
-  if (message.author.id !== '406127752484487168') return;
-  message.channel.send('Restarted <:__:735358969186484256>')
-    client.destroy();
-    client.login("NzIwNzI5MjAxOTYzMDQwODkw.XxhbLw.rwIyeoNpEja4zegOXMgZddk0d2s");
-
-}
-});
-
-
-/*client.on("message", message => {
-  // itzZa1D - Codes Team.
-    let messageArray = message.content.split(" ");    
-    let args = messageArray.slice(1);
-  if (message.content.startsWith(prefix + "fortnite")) {
-    let username = args.join(` `)
-    if(!username) return message.channel.send("Usage: `!fortnite <username>`")
-    let platform = args[1];
-const ft = new Fortnite(apikey.fortnite)
-    let data = ft.getInfo(username).then(data => {
-        let stats = data.lifetimeStats;
-        let kills = stats.find(s => s.stat == "kills");
-        let wins = stats.find(s => s.stat == "wins");
-        let top5s = stats.find(s => s.stat == "top5s");
-        let kd = stats.find(s => s.stat == "kd");
-        let mPlayed = stats.find(s => s.stat == "matchesPlayed");
-        let top3 = stats.find(s => s.stat == "top3");
-        let score = stats.find(s => s.stat == "score");
-        let tPlayed = stats.find(s => s.stat == "timePlayed");
-        let asTime = stats.find(s => s.stat == "avgSurvivalTime");
-        let embed = new Discord.RichEmbed()
-        .setTitle("Fortnite Stats")
-        .setAuthor(data.username)
-        .setColor("#00ff00")
-        .addField("Kills", kills.value, true)
-        .addField("Wins", wins.value, true)
-        .addField("KD", kd.value, true)
-        .addField("Top 3", top3.value, true)
-        .addField("Matches Played", mPlayed.value, true)
-        .addField("Time Played", tPlayed.value, true)
-        .setFooter(`${data.username}'s score is: ${score.value}`)
-        .setTimestamp();
-        message.channel.send(embed);
-    }).catch(e => {
-        console.log(e)
-        message.channel.send("Wrong nickname");
-    });
-}
-});*/
-
 
 
 //// كود معلومات الشخص او اليوزر
